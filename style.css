@@ -1,12 +1,28 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
 }
 
 h1 {
-  color: hotpink;
+  /*color: hotpink;
   font-size: 2em;
   font-family: Georgia, "Times New Roman", Times, serif;
-  border-bottom: dotted 10px purple;
+  border-bottom: dotted 10px purple;*/
+  font-family: fantasy;
+  border-bottom: solid 3px rgb(255, 118, 118);
+  position: relative;
+  /*relative 相対位置*/
+}
+h1:after {
+  /*before, afterは疑似要素っていうらしい*/
+  position: absolute;
+  /*absolute 絶対位置　基準的な*/
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #ffe678;
+  bottom: -3px;
+  width: 30%;
 }
 
 h2 {
@@ -15,23 +31,54 @@ h2 {
 }
 
 .job-title {
-  color: #999999;
+  color: #c5c5c5;
   font-weight: bold;
 }
 
 a:link,
 a:visited {
-  color: #fb6542;
+  color: rgb(255, 118, 118);
 }
 
 a:hover {
-  color: green;
+  color: rgb(255, 197, 89);
   text-decoration: none;
 }
-
+/*
 ul {
-  background-color: #eeeeee;
+  background-color: #292929;
   border: 5px;
   padding: 5vh;
-  border: solid 3px purple;
+  border: solid 5px#ffe678;
+}
+*/
+ul {
+  margin: 2em 0;
+  position: relative;
+  padding: 0.5em 1.5em;
+  /*上下線*/
+  border-top: solid 2px #ffe678;
+  border-bottom: solid 2px #ffe678;
+}
+/*横線*/
+ul:before,
+ul:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  /*height: -webkit-calc(100% + 20px);*/
+  height: calc(100% + 20px);
+  background-color: #ffe678;
+}
+/*位置調節*/
+ul:before {
+  left: 10px;
+}
+ul:after {
+  right: 10px;
+}
+ul li {
+  margin: 1em;
+  padding: 0px;
 }
